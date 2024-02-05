@@ -1,12 +1,12 @@
 import React from 'react'
 import MainLayout from '../../layouts/main-layout/MainLayout';
 
-const Main = () => {
+const SinglePostPage = () => {
   return (
     <MainLayout>
-      <div>main page with posts</div>
+      <div>personal page for specific post /postId</div>
     </MainLayout>
   )
 }
 
-export default Main;
+export default SinglePostPage;

@@ -5,20 +5,20 @@ import {
   createBrowserRouter,
   RouterProvider
 } from "react-router-dom";
-import Main from './pages/main/Main';
-import SinglePost from './pages/single-post/SinglePost';
+import MainPage from './pages/main/MainPage';
+import SinglePostPage from './pages/single-post/SinglePostPage';
 import ErrorPage from './pages/error/ErrorPage';
 
 // put app's pages here
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main/>,
+    element: <MainPage/>,
     errorElement: <ErrorPage/>
   },
   {
     path: "/:postId",
-    element: <SinglePost/>,
+    element: <SinglePostPage/>,
     errorElement: <ErrorPage/>
   },
 ]);
