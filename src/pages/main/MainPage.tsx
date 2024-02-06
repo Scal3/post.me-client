@@ -5,6 +5,7 @@ import MainLayout from '../../layouts/main-layout/MainLayout';
 import Header from '../../components/header/Header';
 import PostsList from '../../components/posts-list/PostsList';
 import { PostsList as PostsListInterface } from '../../api/types';
+import api from '../../api/Api';
 
 const mockData: PostsListInterface = { 
   posts: [
@@ -23,10 +24,59 @@ const mockData: PostsListInterface = {
 
 // Logic here, this is control component
 const MainPage = () => {
+  const makeAllPostsRequest = async () => {
+    try {
+      const posts = await api.getPosts(0, 20);
+      console.log(posts);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  // const makeOnePostRequest = async () => {
+  //   try {
+  //     const posts = await api.getOnePostById(5);
+  //     console.log(posts);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // }
+
+  // const createPostRequest = async () => {
+  //   try {
+  //     const post = {
+  //       username: "Herman",
+  //       heading: "Test post from client",
+  //       text: "Ya lomaaaal steklo!"
+  //     }
+
+  //     const posts = await api.createPost(post);
+  //     console.log(posts);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // }
+
+  // const createCommentRequest = async () => {
+  //   try {
+  //     const comment = {
+  //       username: "Herman",
+  //       text: "Сам откомментил",
+  //       postId: 16
+  //     }
+
+  //     const posts = await api.createComment(comment);
+  //     console.log(posts);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // }
+
+
   return (
     <MainLayout>
       <div className='main-page'>
-        <Header onClick={() => console.log("click")}/>
+        <Header onClick={makeAllPostsRequest}/>
         <PostsList posts={mockData.posts}/>
       </div>
     </MainLayout>
