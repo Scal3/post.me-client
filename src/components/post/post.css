@@ -1,0 +1,49 @@
+.post {
+  background-color: white;
+}
+
+.post__content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2%;
+}
+
+.post__heading-box {
+  border-bottom: 1px solid black;
+}
+
+.post__heading {
+  margin: 0.5%;
+}
+
+.post__text {
+  margin: 0.5%;
+}
+
+.post__under-box {
+  border-top: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5%;
+}
+
+.post__user-data-box {
+  display: flex;
+  width: 50%;
+}
+
+.post__username {
+  margin: 0 0.5% 0 0;
+}
+
+.post__date {
+  margin: 0;
+}
+
+.post__comments-quantity {
+  margin: 0;
+}
+
+
+
+
