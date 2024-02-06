@@ -1,5 +1,5 @@
 import axios from "axios";
-import { OnePost, PostsList } from "./types";
+import { OnePost } from "./types";
 
 // Do try/catch in store methods
 class Api {
@@ -14,10 +14,10 @@ class Api {
     this.url = this.getUrl();
   }
 
-  public async getPosts(page: number, limit: number): Promise<PostsList> {
+  public async getPosts(page: number, limit: number): Promise<OnePost[]> {
     const params = { page, limit };
     const requestUrl = `${this.url}/${this.POST_PATH}`;
-    const { data } = await axios.get<PostsList>(requestUrl, { params });
+    const { data } = await axios.get<OnePost[]>(requestUrl, { params });
 
     return data;
   }

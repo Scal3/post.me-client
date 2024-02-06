@@ -1,10 +1,11 @@
 import "./posts-list.css";
 
 import React, { FC } from 'react'
-import { PostsList as PostsListInterface } from '../../api/types';
+import { OnePost } from '../../api/types';
 import Post from '../post/Post';
 
-interface PostsListProps extends PostsListInterface {
+interface PostsListProps {
+  posts: OnePost[]
 }
 
 // It gets an array with posts from outside (from MainPage)

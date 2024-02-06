@@ -13,7 +13,3 @@ export interface Comment {
   text: string;
   createdAt: Date;
 }
-
-export interface PostsList {
-  posts: OnePost[];
-}

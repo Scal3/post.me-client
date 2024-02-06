@@ -34,7 +34,7 @@ const Post: FC<PostProps> = ({
         <div className="post__under-box">
           <div className="post__user-data-box">
             <p className="post__username">{username} | </p>
-            <p className="post__date">{createdAt.getDate()}</p>
+            <p className="post__date">{createdAt.toString()}</p>
           </div>
         
           <div className="post__comment-box">
