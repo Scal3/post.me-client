@@ -6,11 +6,12 @@ import Header from '../../components/header/Header';
 import PostsList from '../../components/posts-list/PostsList';
 import { useActions } from '../../hooks/useActions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
+import Spinner from '../../components/spinner/Spinner';
 
 // Logic here, this is control component
 const MainPage = () => {
   const { fetchPosts } = useActions();
-  const { posts, page, limit } = useTypedSelector(state => state.post);
+  const { posts, page, limit, isLoading } = useTypedSelector(state => state.post);
   // I must add some spinner for loading
   // And loading/setLoading in store
 
@@ -22,10 +23,14 @@ const MainPage = () => {
 
   return (
     <MainLayout>
-      <div className='main-page'>
-        <Header onClick={console.log}/>
-        <PostsList posts={posts}/>
-      </div>
+      <>
+        {isLoading && <Spinner/>}
+
+        <div className='main-page'>
+          <Header onClick={console.log}/>
+          <PostsList posts={posts}/>
+        </div>
+      </>
     </MainLayout>
   )
 }
