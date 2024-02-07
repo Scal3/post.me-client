@@ -11,7 +11,9 @@ export interface PostState {
 export enum PostActionsTypes {
   FETCH_POSTS = 'FETCH_POSTS',
   FETCH_POSTS_SUCCESS = 'FETCH_POSTS_SUCCESS',
-  FETCH_POSTS_ERROR = 'FETCH_POSTS_ERROR'
+  FETCH_POSTS_ERROR = 'FETCH_POSTS_ERROR',
+
+  INCREASE_PAGE_NUMBER = 'INCREASE_PAGE_NUMBER'
 }
 
 interface FetchPostsAction {
@@ -28,7 +30,12 @@ interface FetchPostsErrorAction {
   payload: string;
 }
 
+interface IncreasePageNumberAction {
+  type: PostActionsTypes.INCREASE_PAGE_NUMBER;
+}
+
 export type PostAction =
 FetchPostsAction
   | FetchPostsSuccessAction
-  | FetchPostsErrorAction;
+  | FetchPostsErrorAction
+  | IncreasePageNumberAction;

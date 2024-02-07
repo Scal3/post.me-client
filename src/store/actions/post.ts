@@ -7,9 +7,10 @@ export const fetchPosts = (page: number, limit: number) => {
     try {
       dispatch({ type: PostActionsTypes.FETCH_POSTS });
 
-      const posts = await api.getPosts(0, 20);
+      const posts = await api.getPosts(0, 15);
 
       dispatch({ type: PostActionsTypes.FETCH_POSTS_SUCCESS, payload: posts });
+      dispatch(increasePageNumber())
 
     } catch (err) {
       console.log(err);
@@ -19,6 +20,10 @@ export const fetchPosts = (page: number, limit: number) => {
     })
     }
   }
+}
+
+export const increasePageNumber = (): PostAction => {
+  return { type: PostActionsTypes.INCREASE_PAGE_NUMBER }
 }
 
 // Examples for request
