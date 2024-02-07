@@ -5,12 +5,13 @@ import api from '../../api/Api';
 export const fetchPosts = (page: number, limit: number) => {
   return async (dispatch: Dispatch<PostAction>) => {
     try {
+      console.log("fetchPosts");
       dispatch({ type: PostActionsTypes.FETCH_POSTS });
 
-      const posts = await api.getPosts(0, 15);
+      const posts = await api.getPosts(page, limit);
 
       dispatch({ type: PostActionsTypes.FETCH_POSTS_SUCCESS, payload: posts });
-      dispatch(increasePageNumber())
+      dispatch(increasePageNumber());
 
     } catch (err) {
       console.log(err);

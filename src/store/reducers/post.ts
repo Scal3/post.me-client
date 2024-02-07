@@ -4,7 +4,7 @@ const initialState: PostState = {
   posts: [],
   isLoading: false,
   page: 0,
-  limit: 20,
+  limit: 15,
   error: ""
 }
 
@@ -13,7 +13,7 @@ export const postReducer = (state = initialState, action: PostAction): PostState
     case PostActionsTypes.FETCH_POSTS:
       return { ...state, isLoading: true }
     case PostActionsTypes.FETCH_POSTS_SUCCESS:
-      return { ...state, isLoading: false, posts: action.payload }
+      return { ...state, isLoading: false, posts: [...state.posts, ...action.payload] }
     case PostActionsTypes.FETCH_POSTS_ERROR:
       return { ...state, isLoading: false, error: action.payload }
 
