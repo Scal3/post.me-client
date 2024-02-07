@@ -19,6 +19,10 @@ const CommentsList: FC<CommentsListProps> = ({ comments }) => {
     />
   ));
 
+  const commentsHeading = commentsArray.length > 0 
+    ? (<h2 className='comments-list__array-heading'>Users' comments:</h2>)
+    : (<h2 className='comments-list__array-heading'>There is no comments yet, you could be the first</h2>);
+
   return (
     <div className='comments-list'>
       <form className='comments-list__form'>
@@ -39,7 +43,7 @@ const CommentsList: FC<CommentsListProps> = ({ comments }) => {
       </form>
 
       <div className='comments-list__array'>
-        <h2 className='comments-list__array-heading'>Users' comments:</h2>
+        { commentsHeading }
         { commentsArray }
       </div>
     </div>

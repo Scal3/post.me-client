@@ -1,3 +1,12 @@
 .posts-list {
   padding: 2% 0 2% 0;
 }
+
+.posts-list__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.posts-list__link:hover {
+  opacity: 0.9;
+}
