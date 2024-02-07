@@ -43,7 +43,7 @@ const Post: FC<PostProps> = ({
         </div>
       </div>
       
-      {commentsSection}
+      { commentsSection }
     
     </div>
   )

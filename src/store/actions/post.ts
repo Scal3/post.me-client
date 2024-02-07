@@ -5,7 +5,6 @@ import api from '../../api/Api';
 export const fetchPosts = (page: number, limit: number) => {
   return async (dispatch: Dispatch<PostAction>) => {
     try {
-      console.log("fetchPosts");
       dispatch({ type: PostActionsTypes.FETCH_POSTS });
 
       const posts = await api.getPosts(page, limit);
@@ -27,16 +26,26 @@ export const increasePageNumber = (): PostAction => {
   return { type: PostActionsTypes.INCREASE_PAGE_NUMBER }
 }
 
-// Examples for request
-  // const makeOnePostRequest = async () => {
-  //   try {
-  //     const posts = await api.getOnePostById(5);
-  //     console.log(posts);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }
+export const fetchOnePostById = (id: number) => {
+  return async (dispatch: Dispatch<PostAction>) => {
+    try {
+      dispatch({ type: PostActionsTypes.FETCH_ONE_POST });
 
+      const post = await api.getOnePostById(id);
+
+      dispatch({ type: PostActionsTypes.FETCH_ONE_POST_SUCCESS, payload: post });
+      
+    } catch (err) {
+      console.log(err);
+      dispatch({
+        type: PostActionsTypes.FETCH_ONE_POST_ERROR,
+        payload: 'Error fetching one post'
+    })
+    }
+  }
+}
+
+// Examples for request
   // const createPostRequest = async () => {
   //   try {
   //     const post = {
