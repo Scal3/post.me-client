@@ -8,8 +8,10 @@ import { useActions } from '../../hooks/useActions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import Spinner from '../../components/spinner/Spinner';
 import { debounce } from 'lodash';
+import { useNavigate } from 'react-router-dom';
 
 const MainPage = () => {
+  const navigate = useNavigate();
   const { fetchPosts } = useActions();
   const { posts, page, limit, isLoading } = useTypedSelector(state => state.post);
 
@@ -48,7 +50,7 @@ const MainPage = () => {
         {isLoading && <Spinner/>}
 
         <div className='main-page'>
-          <Header onClick={console.log}/>
+          <Header onButtonClick={console.log} onLogoClick={() => navigate("/")}/>
           <PostsList posts={posts}/>
         </div>
       </>

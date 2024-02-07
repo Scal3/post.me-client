@@ -36,7 +36,7 @@ const SinglePostPage: FC = () => {
       <div className='single-post-page'>
         {isLoading && <Spinner/>}
 
-        <Header onClick={console.log}/>
+        <Header onButtonClick={console.log} onLogoClick={() => navigate("/")}/>
         {
           isPostLoaded && 
           <Post
