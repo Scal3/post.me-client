@@ -1,6 +1,6 @@
 import "./single-post-page.css";
 
-import React, { useEffect } from 'react'
+import React, { FC, useEffect } from 'react'
 import MainLayout from '../../layouts/main-layout/MainLayout';
 import { useNavigate, useParams } from 'react-router-dom';
 import Header from '../../components/header/Header';
@@ -9,7 +9,7 @@ import Post from "../../components/post/Post";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import Spinner from "../../components/spinner/Spinner";
 
-const SinglePostPage = () => {
+const SinglePostPage: FC = () => {
   const { postId } = useParams();
   const navigate = useNavigate();
   const { fetchOnePostById } = useActions();
@@ -24,7 +24,7 @@ const SinglePostPage = () => {
 
     if (Number.isNaN(postIdNum)) {
       navigate('/');
-      
+
       return;
     }
 

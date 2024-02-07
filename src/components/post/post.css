@@ -8,8 +8,12 @@
   margin-bottom: 2%;
 }
 
+.post__content_margin_zero {
+  margin: 0;
+}
+
 .post__heading-box {
-  border-bottom: 1px solid black;
+  border-bottom: 3px solid cadetblue;
 }
 
 .post__heading {
@@ -21,7 +25,7 @@
 }
 
 .post__under-box {
-  border-top: 1px solid black;
+  border-top: 3px solid cadetblue;
   display: flex;
   justify-content: space-between;
   padding: 0.5%;
@@ -34,16 +38,23 @@
 
 .post__username {
   margin: 0 0.5% 0 0;
+  color: cadetblue;
+  font-weight: bold;
 }
 
-.post__date {
-  margin: 0;
+.post__separator {
+  color: cadetblue;
 }
 
 .post__comments-quantity {
   margin: 0;
 }
 
+.post__comments-section {
+  padding-top: 3%;
+  background-color: cadetblue;
+}
 
-
-
+.border {
+  border-top: 15px solid cadetblue;
+}

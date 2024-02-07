@@ -1,0 +1,48 @@
+.comments-list {
+  
+}
+
+.comments-list__form {
+}
+
+.comments-list__form-heading {
+  margin: 0;
+  margin-bottom: 1%;
+}
+
+.comments-list__text-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.comments-list__submit-button {
+  border: none;
+  background-color: white;
+  background-image: url("./submit.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  width: 20%;
+  min-height: 40px;
+}
+
+.comments-list__submit-button:hover {
+  opacity: 0.9;
+}
+
+.comments-list__array {
+  background-color: cadetblue;
+  margin-top: 1%;
+}
+
+.comments-list__array-heading {
+  margin: 0;
+  margin-bottom: 1%;
+}
+
+.comments-list__comment-text {
+  resize: none;
+  margin-bottom: 0.5%;
+}
+
