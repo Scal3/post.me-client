@@ -8,7 +8,7 @@ interface PostProps {
   username: string;
   heading: string;
   text: string;
-  createdAt: Date;
+  createdAt: string;
   comments: Comment[];
   isLong: boolean;
 }
@@ -41,7 +41,7 @@ const Post: FC<PostProps> = ({
             <p className="post__username">
               {username} 
               <span className="post__separator"> | </span> 
-              {createdAt.toString()}
+              {createdAt}
             </p>
           </div>
         

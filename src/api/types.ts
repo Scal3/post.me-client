@@ -3,7 +3,7 @@ export interface OnePost {
   username: string;
   heading: string;
   text: string;
-  createdAt: Date;
+  createdAt: string;
   comments: Comment[];
 }
 
@@ -11,5 +11,5 @@ export interface Comment {
   id: number;
   username: string;
   text: string;
-  createdAt: Date;
+  createdAt: string;
 }

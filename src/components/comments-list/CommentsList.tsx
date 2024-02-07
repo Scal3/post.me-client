@@ -3,6 +3,7 @@ import './comments-list.css';
 import React, { FC } from 'react'
 import { Comment as CommentInterface } from '../../api/types';
 import Comment from '../comment/Comment';
+import TimeParser from '../../utils/TimeParser';
 
 interface CommentsListProps {
   comments: CommentInterface[];
@@ -15,7 +16,7 @@ const CommentsList: FC<CommentsListProps> = ({ comments }) => {
       key={comment.id} 
       username={comment.username}
       text={comment.text}
-      createdAt={comment.createdAt}
+      createdAt={TimeParser.toAppropriate(comment.createdAt)}
     />
   ));
 

@@ -5,7 +5,7 @@ import React, { FC } from 'react'
 interface CommentProps {
   username: string;
   text: string;
-  createdAt: Date;
+  createdAt: string;
 }
 
 const Comment: FC<CommentProps> = ({ username, text, createdAt }) => {
@@ -15,7 +15,7 @@ const Comment: FC<CommentProps> = ({ username, text, createdAt }) => {
         <p className='comment__meta'>
           {username} 
           <span className="comment__separator"> | </span>  
-          {createdAt.toString()}
+          {createdAt}
         </p>
       </div>
 
