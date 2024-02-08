@@ -1,0 +1,24 @@
+.comment {
+  padding: 1%;
+  margin-bottom: 2%;
+  background-color: white;
+}
+
+.comment__meta-box {
+  border-bottom: 3px solid cadetblue;
+  margin-bottom: 1%;
+}
+
+.comment__meta {
+  margin: 0;
+  color: cadetblue;
+  font-weight: bold;
+}
+
+.comment__text {
+  margin: 0;
+}
+
+.comment__separator {
+  color: cadetblue;
+}

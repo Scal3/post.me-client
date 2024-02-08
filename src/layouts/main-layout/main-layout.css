@@ -1,0 +1,8 @@
+.main-layout {
+  background-color: cadetblue;
+}
+
+.main-layout__content {
+  max-width: 1920px;
+  margin: auto;
+}
